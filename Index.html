@@ -1,0 +1,79 @@
+<html>
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>Vampire Inc</title>
+	<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+
+	<body>
+
+		<div id="game">
+			<table>
+			<tr>
+				<td style="vertical-align:top">
+					<div id="characterPane">
+					Name:</br>
+					<span id="clanName"></span>
+					</div>
+				</td>
+				<td>
+					<div>
+					Blood:<span id="bloodbank">0</span></br>
+					<button type="button" onClick="Drink(1)">Drink</button></br>
+					<button type="button" onClick="buyHerd()">Buy Herd</button> Cost: <span id="herdCost">10</span></br>
+					Herd:<span id="totalHerd">0</span></br>
+					<button type="button" onClick="reset()">Reset</button>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+		<div id="creationStart" style="display:none">
+		You are now a Vampire. Please choose a clan.</br>
+			<button type="button" onClick="clan('Assamites',1)">Assamites</button>
+			<p>A predator clan of assassins with a penchant for Kindred vitae. Also known as the Clan of the Hunt.</p>
+			<button type="button" onClick="clan('Brujah',2)">Brujah</button>
+			<p>Descended from the former philosopher kings of old, this clan is now associated with rebellion and social change. sometimes reffered to as The Learned Clan; more often referred to as Rabble.</p>
+			<button type="button" onClick="clan('Gangrel',3)">Gangrel</button>
+			<p>A nomadic and animalistic clan who have recently left the company of the Camarilla. Also known as the Clan of the Beast or Outlanders.</p>
+			<button type="button" onClick="clan('Giovanni',4)">Giovanni</button>
+			<p>As much a family as a clan, these insular necromancers are quick to amass wealth and power. Also known as the Clan of Death.</p>
+			<button type="button" onClick="clan('Lasombra',5)">Lasombra</button>
+			<p>The rulers and creatores of the Sabbat who control the substance of shadows. Also known as the Clan of Night or the Keepers.</p>
+			<button type="button" onClick="clan('Malkavian',6)">Malkavian</button>
+			<p>A clan of hopelessly insane madmen who have a reputation as seers and visionaries. Also known as the Clan of the Moon or quite spimply Kooks.</p>
+			<button type="button" onClick="clan('Nosferatu',7)">Nosferatu</button>
+			<p>A disfigured group of survivors and sewer-dwellers who have a reputation for acquiring information. Also know as the Clan of the Hidden.</p>
+			<button type="button" onClick="clan('Followers Of Set',8)">Followers of Set</button>
+			<p>The worshippers of a long dead God who are noted for thier ability to corrupt. Also known as the Clan of the Serpent or Sand-Snakes. Can also summon Sebau, which are mighyily awesome.</p>
+			<button type="button" onClick="clan('Ravnos',9)">Ravnos</button>
+			<p>Until recent nights, the Ravnos stood as one of the thirteen major clans. Now after having been nearly destroyed by the Week of Nightmares, members of this clan of rogues and wanderers are exceedingly rare and far between. Also known as Gypsies.</p>
+			<button type="button" onClick="clan('Toreador',10)">Toreador</button>
+			<p>A clan of artist and aesthetes who seek beauty in the darkness of the unlife. Also known as Degenerates.</p>
+			<button type="button" onClick="clan('Tremere',11)">Tremere</button>
+			<p>A highly hierarchical society of undead magicians with a fierce loyalty to their superiors. Referred to either as the Clan of the Usuper or as Warlocks.</p>
+			<button type="button" onClick="clan('Tzimisce',12)">Tzimisce</button>
+			<p>A clan os scholars who make up the spiritual backbone of the Sabbat. Teh are noted for thier bizare ability to reform and shape flesh. Also known as Fiends or the Clan of Shapers.</p>
+			<button type="button" onClick="clan('Ventrue',13)">Ventrue</button>
+			<p>The aristocratic leaders of the Camarilla. Known as Bluebloods or as the Clan of Kings.</p>
+			<button type="button" onClick="set()">set</button>			
+		</div>
+
+
+		<script>
+		if(localStorage.currentGame != 1){
+		document.getElementById("game").style.display='none';
+		document.getElementById("creationStart").style.display='block';
+		}
+		document.getElementById("clanName").innerHTML= "Clan: " + localStorage.clanName;
+		//document.getElementById("result").innerHTML="Last name: " + localStorage.lastname;
+
+
+		</script>
+	</body>
+</html>
